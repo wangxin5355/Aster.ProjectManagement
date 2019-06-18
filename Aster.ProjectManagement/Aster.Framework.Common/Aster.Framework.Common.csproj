@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0C7664B0-2370-48F6-AAF2-67423F033017}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aster.Framework.Common</RootNamespace>
+    <AssemblyName>Aster.Framework.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=1.60.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.60.6\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.16\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.6.5\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\Builder\EntityBuilder.Async.cs" />
+    <Compile Include="Data\Builder\EntityBuilder.cs" />
+    <Compile Include="Data\Builder\QueryBuilder.cs" />
+    <Compile Include="Data\Builder\QueryFunctions.cs" />
+    <Compile Include="Data\ConnectionStrings.cs" />
+    <Compile Include="Data\Core\Attributes\DataContextAttribute.cs" />
+    <Compile Include="Data\Core\Attributes\IgnoreAttribute.cs" />
+    <Compile Include="Data\Core\Attributes\MapToAttribute.cs" />
+    <Compile Include="Data\Core\Attributes\PrefixForColumnsAttribute.cs" />
+    <Compile Include="Data\Core\Attributes\SchemaAttribute.cs" />
+    <Compile Include="Data\Core\Attributes\TableNameAttribute.cs" />
+    <Compile Include="Data\Core\Builder\IEntityBuilder.cs" />
+    <Compile Include="Data\Core\Builder\IQueryBuilder.cs" />
+    <Compile Include="Data\Core\Configuration\DapperConfiguration.cs" />
+    <Compile Include="Data\Core\Configuration\IDapperConfiguration.cs" />
+    <Compile Include="Data\Core\Enums\GroupOperator.cs" />
+    <Compile Include="Data\Core\Enums\KeyType.cs" />
+    <Compile Include="Data\Core\Enums\Operator.cs" />
+    <Compile Include="Data\Core\IEntity.cs" />
+    <Compile Include="Data\Core\Implementor\IDapperImplementor.cs" />
+    <Compile Include="Data\Core\Mapper\IClassMapper.cs" />
+    <Compile Include="Data\Core\Mapper\IPropertyMap.cs" />
+    <Compile Include="Data\Core\Predicates\IBasePredicate.cs" />
+    <Compile Include="Data\Core\Predicates\IComparePredicate.cs" />
+    <Compile Include="Data\Core\Predicates\IExistsPredicate.cs" />
+    <Compile Include="Data\Core\Predicates\IFieldPredicate.cs" />
+    <Compile Include="Data\Core\Predicates\IGetMultiplePredicate.cs" />
+    <Compile Include="Data\Core\Predicates\IGetMultiplePredicateItem.cs" />
+    <Compile Include="Data\Core\Predicates\IMultipleResultReader.cs" />
+    <Compile Include="Data\Core\Predicates\IPredicate.cs" />
+    <Compile Include="Data\Core\Predicates\IPredicateGroup.cs" />
+    <Compile Include="Data\Core\Predicates\IPropertyPredicate.cs" />
+    <Compile Include="Data\Core\Predicates\ISort.cs" />
+    <Compile Include="Data\Core\Repositories\IRepository.cs" />
+    <Compile Include="Data\Core\Sessions\DapperSession.cs" />
+    <Compile Include="Data\Core\Sessions\DapperSessionContext.cs" />
+    <Compile Include="Data\Core\Sessions\DapperSessionFactory.cs" />
+    <Compile Include="Data\Core\Sessions\IConnectionStringProvider.cs" />
+    <Compile Include="Data\Core\Sessions\IDapperSession.cs" />
+    <Compile Include="Data\Core\Sessions\IDapperSessionContext.cs" />
+    <Compile Include="Data\Core\Sessions\IDapperSessionFactory.cs" />
+    <Compile Include="Data\Core\Sessions\StaticConnectionStringProvider.cs" />
+    <Compile Include="Data\Core\Sql\ISqlDialect.cs" />
+    <Compile Include="Data\Core\Sql\ISqlGenerator.cs" />
+    <Compile Include="Data\Core\Sql\SqlDialectBase.cs" />
+    <Compile Include="Data\Extensions\PredicateBuilder.cs" />
+    <Compile Include="Data\Implementor\DapperImplementor.Async.cs" />
+    <Compile Include="Data\Implementor\DapperImplementor.cs" />
+    <Compile Include="Data\Mapper\AutoClassMapper.cs" />
+    <Compile Include="Data\Mapper\ClassMapper.cs" />
+    <Compile Include="Data\Mapper\PluralizedAutoClassMapper.cs" />
+    <Compile Include="Data\Mapper\PropertyMap.cs" />
+    <Compile Include="Data\MySql\MySqlDialect.cs" />
+    <Compile Include="Data\Predicates\BasePredicate.cs" />
+    <Compile Include="Data\Predicates\BetweenPredicate.cs" />
+    <Compile Include="Data\Predicates\BetweenValues.cs" />
+    <Compile Include="Data\Predicates\BooleanPredicate.cs" />
+    <Compile Include="Data\Predicates\ComparePredicate.cs" />
+    <Compile Include="Data\Predicates\ExistsPredicate.cs" />
+    <Compile Include="Data\Predicates\FieldPredicate.cs" />
+    <Compile Include="Data\Predicates\GetMultiplePredicate.cs" />
+    <Compile Include="Data\Predicates\GetMultiplePredicateItem.cs" />
+    <Compile Include="Data\Predicates\GridReaderResultReader.cs" />
+    <Compile Include="Data\Predicates\IBetweenPredicate.cs" />
+    <Compile Include="Data\Predicates\PredicateGroup.cs" />
+    <Compile Include="Data\Predicates\Predicates.cs" />
+    <Compile Include="Data\Predicates\PropertyPredicate.cs" />
+    <Compile Include="Data\Predicates\SequenceReaderResultReader.cs" />
+    <Compile Include="Data\Predicates\Sort.cs" />
+    <Compile Include="Data\ReflectionHelper.cs" />
+    <Compile Include="Data\Repositories\DapperRepository.Async.cs" />
+    <Compile Include="Data\Repositories\DapperRepository.cs" />
+    <Compile Include="Data\Sql\SqlGeneratorImpl.cs" />
+    <Compile Include="Data\Sql\SqlServerDialect.cs" />
+    <Compile Include="Events\EventData.cs" />
+    <Compile Include="Events\EventHanlerExtends.cs" />
+    <Compile Include="Events\IEventHandler.cs" />
+    <Compile Include="Exceptions\MyException.cs" />
+    <Compile Include="Extensions\ClaimPrincipalExtensions.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Extensions\NameValueCollectionExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\ClientOSUtil.cs" />
+    <Compile Include="Utils\CloneUtils.cs" />
+    <Compile Include="Utils\CommonValidator.cs" />
+    <Compile Include="Utils\ConverterUtil.cs" />
+    <Compile Include="Utils\DateTimeUtil.cs" />
+    <Compile Include="Utils\EnumUtil.cs" />
+    <Compile Include="Utils\MaskUtil.cs" />
+    <Compile Include="Utils\MatchExpression.cs" />
+    <Compile Include="Utils\RandomUtil.cs" />
+    <Compile Include="Utils\SecurityUtil.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

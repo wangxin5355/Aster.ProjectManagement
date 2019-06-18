@@ -10,7 +10,7 @@ using System.Reflection;
 
 namespace Aster.Common.Data.Core.Configuration
 {
-    public class DapperConfiguration : IDapperConfiguration
+    public class DapperConfiguration 
     {
         private readonly ConcurrentDictionary<Type, IClassMapper> _classMaps = new ConcurrentDictionary<Type, IClassMapper>();
         private readonly ILoggerFactory _loggerFactory;
@@ -20,30 +20,40 @@ namespace Aster.Common.Data.Core.Configuration
         public string DefaultConnectionStringName { get; private set; }
         public ISqlDialect Dialect { get; private set; }
 
-        private DapperConfiguration(IDictionary<string, string> allConnectionStrings, ILoggerFactory loggerFactory)
+        private DapperConfiguration instance;
+
+        
+
+        public DapperConfiguration Instance
         {
-            _loggerFactory = loggerFactory;
-            AllConnectionStrings = allConnectionStrings;
+            get
+            {
+                if(instance==null)
+                {
+                    instance = new DapperConfiguration();
+                }
+                return instance;
+            }
+        }
+
+        private DapperConfiguration()
+        {
+            AllConnectionStrings = GetAllConnectionStrings();
             Assemblies = new List<Assembly>();
-            DefaultConnectionStringName = "__Default";
+            DefaultConnectionStringName = "DefaultConnectionString";
+        }
+
+        private IDictionary<string, string> GetAllConnectionStrings()
+        {
+            IDictionary<string, string> connectionString = new Dictionary<string, string>();
+
+
+            return connectionString;
         }
 
         public IDictionary<string, string> AllConnectionStrings { get; private set; }
 
-        /// <summary>
-        /// Creates a Dapper configuration with default static <see cref="IConnectionStringProvider"/> and <see cref="IDapperSessionContext"/> per thread.
-        /// </summary>
-        /// <returns></returns>
-        public static IDapperConfiguration Use(IDictionary<string, string> allConnectionStrings, ILoggerFactory loggerFactory)
-        {
-            return new DapperConfiguration(allConnectionStrings, loggerFactory);
-        }
 
-        public IDapperConfiguration WithDefaultConnectionStringNamed(string name)
-        {
-            DefaultConnectionStringName = name;
-            return this;
-        }
 
         /// <summary>
         /// Assign a class mapper during configuration

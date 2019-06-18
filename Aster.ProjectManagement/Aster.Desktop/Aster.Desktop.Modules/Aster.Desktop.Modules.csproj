@@ -9,10 +9,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aster.Desktop.Modules</RootNamespace>
     <AssemblyName>Aster.Desktop.Modules</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -82,13 +83,13 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Aster.Common\Aster.Common.csproj">
-      <Project>{DDF52727-6A6F-45B9-846D-E1FBBC4FE618}</Project>
-      <Name>Aster.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Aster.Entity\Aster.Entity.csproj">
       <Project>{C9B2B097-4E5F-41BC-B454-C1A732FDEE1A}</Project>
       <Name>Aster.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Aster.Framework.Common\Aster.Framework.Common.csproj">
+      <Project>{0c7664b0-2370-48f6-aaf2-67423f033017}</Project>
+      <Name>Aster.Framework.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Aster.Desktop.Common\Aster.Desktop.Common.csproj">
       <Project>{49663b53-7458-4234-9368-e15b6b06b8fb}</Project>

@@ -3,12 +3,12 @@ using DevExpress.Mvvm.POCO;
 using Aster.Desktop.Common;
 using System;
 using Aster.Entity.Entities;
-using Aster.Common.Data.Core.Repositories;
-using Aster.Common.Data.Repositories;
-using Aster.Common.Data.Core.Sessions;
-using Aster.Common.Data.Sql;
-using Aster.Common.Data.Implementor;
-using Aster.Common.Data.Core.Configuration;
+using Aster.Framework.Common.Data.Core.Repositories;
+using Aster.Framework.Common.Data.Repositories;
+using Aster.Framework.Common.Data.Core.Sessions;
+using Aster.Framework.Common.Data.Sql;
+using Aster.Framework.Common.Data.Implementor;
+using Aster.Framework.Common.Data.Core.Configuration;
 
 namespace Aster.Desktop.Modules.ViewModels
 {

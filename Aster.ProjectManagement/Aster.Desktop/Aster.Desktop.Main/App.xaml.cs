@@ -11,6 +11,7 @@ using Aster.Desktop.Modules.Views;
 using System.ComponentModel;
 using System.Windows;
 using AppModules = Aster.Desktop.Common.Modules;
+using NLog;
 
 namespace Aster.Desktop.Main
 {
@@ -30,6 +31,7 @@ namespace Aster.Desktop.Main
     }
     public class Bootstrapper
     {
+       
         const string StateVersion = "1.0";
         public virtual void Run()
         {
@@ -52,6 +54,11 @@ namespace Aster.Desktop.Main
         }
         protected virtual void RegisterModules()
         {
+
+            Logger logger = LogManager.GetCurrentClassLogger();
+            logger.Info("test");
+            logger.Error("test");
+            logger.Fatal("test");
             Manager.Register(Regions.MainWindow, new Module(AppModules.Main, MainViewModel.Create, typeof(MainView)));
             //配置导航项
             Manager.Register(Regions.Navigation_ProjectsManagement, new Module(AppModules.ProjectsManagement, () => new NavigationItem("项目管理")));
@@ -116,7 +123,7 @@ namespace Aster.Desktop.Main
 
         void OnDocumentsNavigation(object sender, NavigationEventArgs e)
         {
-            Manager.Navigate(Regions.Navigation_ProjectsManagement, e.NewViewModelKey);
+            Manager.Navigate(Regions.Documents, e.NewViewModelKey);
         }
 
 
