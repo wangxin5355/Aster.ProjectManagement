@@ -72,5 +72,17 @@ namespace Aster.Framework.Common.Data.Core.Sessions
 
             Connection.Dispose();
         }
+
+        public void Commit()
+        {
+            if (Transaction != null && Transaction.Connection != null && Transaction.Connection.State == ConnectionState.Open)
+                Transaction.Commit();
+        }
+
+        public void Rollback()
+        {
+            if (Transaction != null && Transaction.Connection != null && Transaction.Connection.State == ConnectionState.Open)
+                Transaction.Rollback();
+        }
     }
 }

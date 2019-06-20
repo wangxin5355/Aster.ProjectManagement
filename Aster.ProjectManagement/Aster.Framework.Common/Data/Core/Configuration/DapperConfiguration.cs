@@ -50,8 +50,8 @@ namespace Aster.Framework.Common.Data.Core.Configuration
         private static IDictionary<string, string> GetAllConnectionStrings()
         {
             IDictionary<string, string> connectionString = new Dictionary<string, string>();
-
-
+            connectionString.Add("DefaultConnectionString", Utils.ConnectionStringUtil.GetConnectionString("DefaultConnectionString"));
+            //如果有新的连接在这里添加
             return connectionString;
         }
 

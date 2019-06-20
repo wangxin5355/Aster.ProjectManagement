@@ -11,5 +11,6 @@ namespace Aster.Framework.Common.Data.Core.Sessions
         void RequireNew();
         void RequireNew(IsolationLevel level);
         void Cancel();
+
     }
 }

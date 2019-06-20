@@ -106,6 +106,14 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Aster.Entity\Aster.Entity.csproj">
+      <Project>{C9B2B097-4E5F-41BC-B454-C1A732FDEE1A}</Project>
+      <Name>Aster.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Aster.Framework.Common\Aster.Framework.Common.csproj">
+      <Project>{0C7664B0-2370-48F6-AAF2-67423F033017}</Project>
+      <Name>Aster.Framework.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Aster.Desktop.Common\Aster.Desktop.Common.csproj">
       <Project>{47816c7e-ff8d-442f-8ae6-9571c5580a34}</Project>
       <Name>Aster.Desktop.Common</Name>

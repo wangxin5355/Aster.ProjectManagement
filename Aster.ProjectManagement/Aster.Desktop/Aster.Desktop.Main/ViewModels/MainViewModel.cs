@@ -8,5 +8,10 @@ namespace Aster.Desktop.Main.ViewModels
         {
             return ViewModelSource.Create(() => new MainViewModel());
         }
+
+        public MainViewModel()
+        {
+
+        }
     }
 }

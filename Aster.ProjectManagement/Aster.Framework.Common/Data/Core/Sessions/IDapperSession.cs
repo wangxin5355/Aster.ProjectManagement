@@ -6,5 +6,11 @@ namespace Aster.Framework.Common.Data.Core.Sessions
     {
         IDbConnection Connection { get; }
         IDbTransaction Transaction { get; set; }
+
+        void Commit();
+        void Rollback();
+
+
+
     }
 }

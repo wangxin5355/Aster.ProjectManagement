@@ -1,11 +1,11 @@
-DROP DATABASE IF EXISTS aster.projectmanagement;
-CREATE DATABASE IF NOT EXISTS aster.projectmanagement DEFAULT CHARSET utf8 COLLATE utf8_bin;
+DROP DATABASE IF EXISTS `aster.projectmanagement`;
+CREATE DATABASE IF NOT EXISTS `aster.projectmanagement` DEFAULT CHARSET utf8 COLLATE utf8_bin;
 
-use aster.projectmanagement;
+use `aster.projectmanagement`;
 
 # 员工表
-DROP TABLE IF EXISTS t_employee;
-CREATE TABLE IF NOT EXISTS t_employee (
+DROP TABLE IF EXISTS `t_employee`;
+CREATE TABLE IF NOT EXISTS `t_employee` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '员工id',
   `name` VARCHAR(45) NULL COMMENT '身份证上的名字',
   `idCardNo` VARCHAR(100) NULL COMMENT '身份证号码',
@@ -24,7 +24,8 @@ COLLATE = utf8_bin
 COMMENT = '员工表';
 
 #员工银行表卡
-CREATE TABLE t_employeebanks (
+DROP TABLE IF EXISTS `t_employeebanks`;
+CREATE TABLE `t_employeebanks` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `employeeId` INT NULL COMMENT '员工id',
   `bankCardId` VARCHAR(100) NULL COMMENT '银行卡号',
@@ -34,11 +35,30 @@ CREATE TABLE t_employeebanks (
 COMMENT = '员工银行卡信息';
 
 #银行卡列表
-CREATE TABLE t_banks (
+DROP TABLE IF EXISTS `t_banks`;
+CREATE TABLE `t_banks` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `bankName` VARCHAR(45) NULL COMMENT '银行名称',
   `bankAddr` VARCHAR(45) NULL COMMENT '开户地址',
   PRIMARY KEY (`id`))
 COMMENT = '银行卡列表';
+
+#员工标签
+DROP TABLE IF EXISTS `t_employeetags`;
+CREATE TABLE `t_employeetags` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `employeeId` INT NULL COMMENT '员工id',
+  `tagId` Int NULL COMMENT '标签id',
+  PRIMARY KEY (`id`))
+COMMENT = '员工标签';
+
+#标签
+DROP TABLE IF EXISTS `t_tags`;
+CREATE TABLE `t_tags` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `tag`  VARCHAR(45) NULL COMMENT '标签',
+  PRIMARY KEY (`id`))
+COMMENT = '标签';
+
 
 

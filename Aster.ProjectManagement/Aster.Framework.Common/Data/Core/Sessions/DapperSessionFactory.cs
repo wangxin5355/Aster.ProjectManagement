@@ -22,7 +22,7 @@ namespace Aster.Framework.Common.Data.Core.Sessions
         {
             get
             {
-                if(Instance==null)
+                if(instance == null)
                 {
                     instance = new DapperSessionFactory();
                 }

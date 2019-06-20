@@ -157,6 +157,7 @@
     <Compile Include="Utils\ClientOSUtil.cs" />
     <Compile Include="Utils\CloneUtils.cs" />
     <Compile Include="Utils\CommonValidator.cs" />
+    <Compile Include="Utils\ConnectionStringUtil.cs" />
     <Compile Include="Utils\ConverterUtil.cs" />
     <Compile Include="Utils\DateTimeUtil.cs" />
     <Compile Include="Utils\EnumUtil.cs" />

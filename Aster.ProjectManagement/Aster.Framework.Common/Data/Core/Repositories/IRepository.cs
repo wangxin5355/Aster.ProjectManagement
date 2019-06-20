@@ -24,7 +24,6 @@ namespace Aster.Framework.Common.Data.Core.Repositories
         IEnumerable<dynamic> QueryDynamic(string sql, object param = null, int? timeout = null);
         object QueryScalar(string sql, object param = null, int? timeout = null);
         IEntityBuilder<T> Query(Expression<Func<T, bool>> predicate = null);
-        IDapperSession GetSession();
         Task<int> Execute(string sql, object param = null, int? timeout = null, CommandType? commandType = null);
 
         #region async
