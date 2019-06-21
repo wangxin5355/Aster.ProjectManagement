@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `t_employee` (
   `idCardNo` VARCHAR(100) NULL COMMENT '身份证号码',
   `addr` VARCHAR(255) NULL COMMENT '身份证上地址',
   `liveAddr` VARCHAR(155) NULL COMMENT '居住地址',
-  `phone` INT NULL COMMENT '手机号码',
+  `phone` LONG NULL COMMENT '手机号码',
   `defaultPrice` DOUBLE NULL COMMENT '默认时薪',
   `creditLevel` INT NULL COMMENT '信用等级',
   `diligentLevel` INT NULL COMMENT '勤奋等级',

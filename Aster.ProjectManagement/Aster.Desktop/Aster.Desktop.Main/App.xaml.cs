@@ -37,19 +37,19 @@ namespace Aster.Desktop.Main
         const string StateVersion = "1.0";
         public virtual void Run()
         {
-            var ep = new DapperRepository<Employee>();
-            Employee employee = new Employee();
-            employee.Name = "王鑫";
-            employee.IdCardNo = "511011199006155355";
-            employee.Addr = "四川内江";
-            employee.LiveAddr = "浙江杭州";
-            employee.Phone = 15928971373;
-            employee.DefaultPrice = 50;
-            employee.CreditLevel = 1;
-            employee.DiligentLevel = 1;
-            ep.Insert(employee);
-            var x = ep.GetList();
-            ep.Commit();
+            //var ep = new DapperRepository<Employee>();
+            //Employee employee = new Employee();
+            //employee.Name = "王鑫";
+            //employee.IdCardNo = "511011199006155355";
+            //employee.Addr = "四川内江";
+            //employee.LiveAddr = "浙江杭州";
+            //employee.Phone = 15928971373;
+            //employee.DefaultPrice = 50;
+            //employee.CreditLevel = 1;
+            //employee.DiligentLevel = 1;
+            //ep.Insert(employee);
+            //var x = ep.GetList();
+            //ep.Commit();
             ConfigureTypeLocators();
             RegisterModules();
             if (!RestoreState())
