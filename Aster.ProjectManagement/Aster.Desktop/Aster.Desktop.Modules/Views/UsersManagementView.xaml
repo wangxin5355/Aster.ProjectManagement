@@ -6,11 +6,12 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
              xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" xmlns:ViewModels="clr-namespace:Aster.Desktop.Modules.ViewModels"
-             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Class="Aster.Desktop.Modules.Views.UsersManagementView"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
              xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" x:Class="Aster.Desktop.Modules.Views.UsersManagementView"
              mc:Ignorable="d"
              DataContext="{dxmvvm:ViewModelSource Type={x:Type ViewModels:UsersManagementViewModel}}"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="553.279" d:DesignWidth="537.295">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -29,6 +30,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Border Grid.Row="0" BorderThickness="2" BorderBrush="Black">
             <StackPanel Orientation="Horizontal">
@@ -36,14 +38,17 @@
                 <controls:AutoCompleteBox  ItemsSource="{Binding Names}" SelectedItem="{Binding SelectedName, Mode=TwoWay}" 
                                   Width="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <Button Height="21" Width="21" Margin="10,0,0,0" Style="{StaticResource MaterialDesignFloatingActionMiniButton}" ToolTip="搜索">
-                    <materialDesign:PackIcon Kind="Search" Height="20" Width="20" />
+                    <md:PackIcon Kind="Search" Height="20" Width="20" />
                 </Button>
             </StackPanel>
         </Border>
         <Border Grid.Row="1"  BorderThickness="2" BorderBrush="Black" Margin="0,3,0,0">
-            <DataGrid >
-            </DataGrid>
-        </Border>
 
+            <dxg:GridControl  AutoGenerateColumns="None" EnableSmartColumnsGeneration="True" SelectionMode="Row">
+                <dxg:GridControl.View>
+                    <dxg:TableView Name='view1' ShowTotalSummary="True" AllowEditing="False" />
+                </dxg:GridControl.View>
+            </dxg:GridControl>
+        </Border>
     </Grid>
 </UserControl>

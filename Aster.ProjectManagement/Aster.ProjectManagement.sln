@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aster.Access", "Aster.Acces
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aster.Framework.Common", "Aster.Framework.Common\Aster.Framework.Common.csproj", "{0C7664B0-2370-48F6-AAF2-67423F033017}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aster.MaterialDesktop.Main", "Aster.MaterialDesktop.Main\Aster.MaterialDesktop.Main.csproj", "{09FAD074-5521-44F5-B389-07CE47E65D49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{0C7664B0-2370-48F6-AAF2-67423F033017}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C7664B0-2370-48F6-AAF2-67423F033017}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C7664B0-2370-48F6-AAF2-67423F033017}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09FAD074-5521-44F5-B389-07CE47E65D49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09FAD074-5521-44F5-B389-07CE47E65D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09FAD074-5521-44F5-B389-07CE47E65D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09FAD074-5521-44F5-B389-07CE47E65D49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

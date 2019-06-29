@@ -1,2 +1,5 @@
 DevExpress.Patch.InMemoryPatch, DevExpress.Patch.Common, Version=6.2.0.0, Culture=neutral, PublicKeyToken=87f9927a37ac6066
 DevExpress.Xpf.Editors.ComboBoxEdit, DevExpress.Xpf.Core.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.Xpf.Grid.GridControl, DevExpress.Xpf.Grid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+Telerik.Windows.Controls.RadCollectionNavigator, Telerik.Windows.Controls.Data, Version=2017.1.117.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7
+DevExpress.Xpf.Editors.DateNavigator.DateNavigator, DevExpress.Xpf.Core.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a

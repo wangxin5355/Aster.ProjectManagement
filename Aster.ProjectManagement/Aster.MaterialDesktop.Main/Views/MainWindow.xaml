@@ -1,0 +1,176 @@
+﻿<controls:MetroWindow x:Class="Aster.MaterialDesktop.Main.Views.MainWindow"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.ch/ignore"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:controls1="clr-namespace:Notifications.Wpf.Controls;assembly=Notifications.Wpf"
+        xmlns:usercontrols="clr-namespace:Aster.MaterialDesktop.Main.Views"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:viewModels="clr-namespace:Aster.MaterialDesktop.Main.ViewModels" 
+        xmlns:views="clr-namespace:Aster.MaterialDesktop.Main.Views"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="Prism MvvM" Height="339" Width="557"
+        BorderBrush="{DynamicResource AccentColorBrush}"
+        SaveWindowPosition="True"
+
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        TitleCharacterCasing="Normal"
+        TitleForeground="White"
+        mc:Ignorable="d ignore" ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <!--Style="{DynamicResource CustomDefaultWindowStyle}"
+    Background="{StaticResource MaterialDesignBackground}"-->
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Shadows.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ListBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ToggleButton.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />
+                <ResourceDictionary Source="../Style/ButtonStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style
+                x:Key="CustomDefaultWindowStyle"
+                BasedOn="{StaticResource {x:Type controls:MetroWindow}}"
+                TargetType="{x:Type controls:MetroWindow}">
+                <Setter Property="WindowTransitionsEnabled" Value="False" />
+                <Setter Property="EnableDWMDropShadow" Value="True" />
+            </Style>
+            <Style
+                x:Key="MenuButton"
+                x:Name="MenuButton"
+                BasedOn="{StaticResource MaterialDesignFlatButton}"
+                TargetType="Button">
+                <Setter Property="Height" Value="40" />
+                <Setter Property="Background" Value="{StaticResource AccentColorBrush}" />
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="Margin" Value="0,0,0,0" />
+
+
+            </Style>
+            <!--<DataTemplate DataType="{x:Type vm:NewCallerViewModel}">
+               
+            </DataTemplate>-->
+            <!--<DataTemplate DataType="{x:Type viewModels:SecoundPageViewModel}">
+                <views:SecoundPageView></views:SecoundPageView>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModels:MainPageViewModel}">
+                <views:MainPageView/>
+            </DataTemplate>-->
+
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Border BorderBrush="#009688" BorderThickness="1"/>
+        <materialDesign:DialogHost Identifier="RootDialog" IsOpen="{Binding DialogHostIsOpen, UpdateSourceTrigger=PropertyChanged}">
+            <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
+                <materialDesign:DrawerHost.LeftDrawerContent>
+                    <DockPanel MinWidth="212">
+                        <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
+                                    DockPanel.Dock="Top"
+                                    HorizontalAlignment="Right" Margin="15"
+                                    IsChecked="{Binding ElementName=MenuToggleButton, 
+                        Path=IsChecked, Mode=TwoWay}" />
+                        <usercontrols:MainLeftMenu/>
+                    </DockPanel>
+                </materialDesign:DrawerHost.LeftDrawerContent>
+
+                <DockPanel>
+                    <materialDesign:ColorZone
+                    Padding="9"
+                    materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                    DockPanel.Dock="Top"
+                    Mode="PrimaryMid">
+                        <DockPanel>
+
+                            <ToggleButton
+                            x:Name="MenuToggleButton"
+                            Foreground="White"
+                            IsChecked="False"
+                            
+                            Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
+                            <!--<DockPanel DockPanel.Dock="Right" >
+
+
+                                <Button   ToolTip="Logout" Style="{StaticResource MaterialDesignFlatButtonRight}"  >
+                                    <materialDesign:PackIcon Kind="Logout"/>
+                                </Button>
+                            </DockPanel>-->
+                            <!--<DockPanel DockPanel.Dock="Right" >
+                                <StackPanel Orientation="Horizontal" Margin="8">
+                                    <TextBlock VerticalAlignment="Center">Light</TextBlock>
+                                    <ToggleButton Margin="8 0 16 0" Command="{Binding ToggleBaseCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
+                                    <TextBlock VerticalAlignment="Center">Dark</TextBlock>
+                                </StackPanel>
+                            </DockPanel>-->
+
+                            <materialDesign:PopupBox
+                            DockPanel.Dock="Right"
+                            Style="{StaticResource  MaterialDesignMultiFloatingActionPopupBox}"
+                            ToolTipService.Placement="Right"
+                            Foreground="White"
+                            PlacementMode="BottomAndAlignCentres">
+                                <materialDesign:PopupBox.ToggleContent>
+                                    <materialDesign:PackIcon Kind="DotsHorizontal" />
+                                </materialDesign:PopupBox.ToggleContent>
+                                <materialDesign:PopupBox.ToggleCheckedContent>
+                                    <materialDesign:PackIcon Kind="Close" />
+                                </materialDesign:PopupBox.ToggleCheckedContent>
+
+                                <StackPanel Margin="5">
+
+                                    <Button Command="{Binding SettingsCommand}" ToolTip="Search">
+                                        <materialDesign:PackIcon Kind="Settings" />
+                                    </Button>
+                                    <!--<Button Command="{Binding DisplayCallhistoryCommand}" ToolTip="History" >
+                                        <materialDesign:PackIcon Kind="History" />
+                                    </Button>
+
+                                    <Button Command="{Binding ResetCallerCommand}" ToolTip="Reset View" >
+                                        <materialDesign:PackIcon Kind="Refresh" />
+                                    </Button>-->
+                                    <Button Command="{Binding LogoutCommand}" ToolTip="Logout" >
+                                        <materialDesign:PackIcon Kind="Logout" />
+                                    </Button>
+
+                                </StackPanel>
+                            </materialDesign:PopupBox>
+
+                            <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="22"
+                            Foreground="White"
+                            Text="{Binding NavigationService.CurrentView.DisplayTitle}" />
+                        </DockPanel>
+                    </materialDesign:ColorZone>
+                    <Grid ZIndex="5">
+                        <controls:TransitioningContentControl
+                        Margin="0"
+                        Content="{Binding NavigationService.CurrentView}"
+                        Transition="Left" />
+
+                        <controls1:NotificationArea
+                        x:Name="WindowArea"
+                        Width="auto"
+                        Height="auto"
+                        Margin="15"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        MaxItems="5"
+                        Position="BottomLeft" />
+                    </Grid>
+                </DockPanel>
+
+            </materialDesign:DrawerHost>
+        </materialDesign:DialogHost>
+    </Grid>
+    <!--<Grid>
+        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+    </Grid>-->
+</controls:MetroWindow>
